@@ -1,0 +1,113 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block; }
+body {
+    line-height: 1; }
+ol, ul {
+    list-style: none; }
+blockquote, q {
+    quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none; }
+table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+html, body, table {
+  height: 100%;
+  width: 100%;
+}
+
+td {
+  vertical-align: middle;
+}
+body {
+    background: rgb(38,38,38);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif; 
+    color: rgb(255,255,255);
+}
+
+h2 {
+    font-size: 2.5em;
+}
+#title {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: -10px;
+}
+
+#picture {
+  text-align: center;
+  margin-top: 25px;
+  display: none;
+}
+
+#picture > img {
+  border: 3px solid rgb(255,255,255);
+  border-radius: 100%;
+  width: 75px;
+}
+
+#contacts {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+i {
+    display: inline-block;
+    margin: 5px;
+    height: 64px;
+    width: 64px;
+    background-size: 64px 64px;
+}
+
+.half i{
+    height: 32px;
+    width: 32px;
+    background-size: 32px 32px;
+}
+
+.round i{
+    padding: 8px;
+    border-radius: 64px;
+    background-position: center center;
+}
+
+i.github {
+    /*background-color: #4183c4;*/
+    /*background-color: #ff8300;*/
+    background-image: url("img/github-64.png");
+    background-repeat: no-repeat;
+}
+i.linkedin {
+    /*background-color: #007fb1;*/
+    background-image: url("img/linkedin-64.png");
+    background-repeat: no-repeat;
+}
+i.twitter {
+    /*background-color: #00aced;*/
+    background-image: url("img/twitter-64.png");
+    background-repeat: no-repeat;
+}
+
+i:hover {
+    opacity: 0.75;
+}
+
+i:active {
+    opacity: 0.5;
+}
