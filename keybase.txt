@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/mbeasley
+--------------------------------------------------------------------
+
+I hereby claim:
+
+* I am an admin of http://mbeasley.com
+* I am mbeasley (https://keybase.io/mbeasley) on keybase.
+* I have a public key ASCAxADgayp36K4pF_N2KVRw5c-WIAPshGbUJSXmdk2QyAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010157ede7c592c68eaa1d219489c032d70dc6980c5fdfd088f425bace9ccf705e750a",
+      "host": "keybase.io",
+      "kid": "012080c400e06b2a77e8ae2917f376295470e5cf962003ec8466d42525e6764d90c80a",
+      "uid": "33886b542742642224a5e1f41c013a00",
+      "username": "mbeasley"
+    },
+    "merkle_root": {
+      "ctime": 1496668696,
+      "hash": "7494e4687cbb410f8967322999080d0ab69abc19c60db4a7d35da1a97920b1d5a6dba815b81721508a5ad442b8913e9fddde65571fbe9a635b5f3b84c208ff7f",
+      "hash_meta": "c740614968f56111bc7aa486cf067202b4208bbc782a3978cf2f889fe923d5cf",
+      "seqno": 1144156
+    },
+    "service": {
+      "hostname": "mbeasley.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.24"
+  },
+  "ctime": 1496668755,
+  "expire_in": 504576000,
+  "prev": "d5abf676e3e5cb470875238ce8cd0b0cda60879a3b152438e3ea2ff8496b8c36",
+  "seqno": 11,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEggMQA4Gsqd+iuKRfzdilUcOXPliAD7IRm1CUl5nZNkMgKp3BheWxvYWTFA0R7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxNTdlZGU3YzU5MmM2OGVhYTFkMjE5NDg5YzAzMmQ3MGRjNjk4MGM1ZmRmZDA4OGY0MjViYWNlOWNjZjcwNWU3NTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwODBjNDAwZTA2YjJhNzdlOGFlMjkxN2YzNzYyOTU0NzBlNWNmOTYyMDAzZWM4NDY2ZDQyNTI1ZTY3NjRkOTBjODBhIiwidWlkIjoiMzM4ODZiNTQyNzQyNjQyMjI0YTVlMWY0MWMwMTNhMDAiLCJ1c2VybmFtZSI6Im1iZWFzbGV5In0sIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDk2NjY4Njk2LCJoYXNoIjoiNzQ5NGU0Njg3Y2JiNDEwZjg5NjczMjI5OTkwODBkMGFiNjlhYmMxOWM2MGRiNGE3ZDM1ZGExYTk3OTIwYjFkNWE2ZGJhODE1YjgxNzIxNTA4YTVhZDQ0MmI4OTEzZTlmZGRkZTY1NTcxZmJlOWE2MzViNWYzYjg0YzIwOGZmN2YiLCJoYXNoX21ldGEiOiJjNzQwNjE0OTY4ZjU2MTExYmM3YWE0ODZjZjA2NzIwMmI0MjA4YmJjNzgyYTM5NzhjZjJmODg5ZmU5MjNkNWNmIiwic2Vxbm8iOjExNDQxNTZ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoibWJlYXNsZXkuY29tIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4yNCJ9LCJjdGltZSI6MTQ5NjY2ODc1NSwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsInByZXYiOiJkNWFiZjY3NmUzZTVjYjQ3MDg3NTIzOGNlOGNkMGIwY2RhNjA4NzlhM2IxNTI0MzhlM2VhMmZmODQ5NmI4YzM2Iiwic2Vxbm8iOjExLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQPsTCskYgrNvSpujd34Wxyzx07AZHetVvJcXTWf2uOisJFzJLkXxKZU0HagKDBqVIFT6WQTjOz+9rbPNKB3yHguoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCBaGjUBuCgdS45WhrFJSwOvf4SvOE5DNgQUmnvlPVXYdKN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mbeasley
+
+==================================================================
