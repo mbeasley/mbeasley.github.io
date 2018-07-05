@@ -114,8 +114,17 @@
           <h3>Code</h3>
           <pre>
             <code class="ruby">
-@thingy = ["a", "b", "c"]
-@thingy.each { |t| t.trim }
+module Ctrl
+  class Trello
+    include HTTParty
+    base_uri 'https://api.trello.com/1/'
+
+    def initialize(name)
+      @key = Config.key
+      @token = Config.token
+    end
+  end
+end
             </code>
           </pre>
           <hr>
