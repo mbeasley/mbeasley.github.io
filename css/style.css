@@ -5,6 +5,7 @@
 :root {
   /* colors from base16-ocean*/
   --color-red: rgb(186,97,107);
+  --color-darkred: rgb(150,97,107);
   --color-blue: rgb(145,161,179);
   --color-navy: rgb(44,48,59);
   --color-yellow: rgb(232,204,140);
@@ -83,9 +84,9 @@ th, td
 a { text-decoration: none; }
 a:link { color: var(--color-red);  }
 a:visited { color: var(--color-red);  }
-a:focus { color: var(--color-white);  }
-a:hover { color: var(--color-white);  }
-a:active { color: var(--color-white);  }
+a:focus { color: var(--color-darkred);  }
+a:hover { color: var(--color-darkred);  }
+a:active { color: var(--color-darkred);  }
 
 pre, code {
   font-family: "Source Code Pro", monospace;
@@ -137,32 +138,32 @@ pre, code {
 }
 
 .page-date {
+  font-family: "Source Sans Pro";
   text-align: center;
   margin-bottom: 2em;
   letter-spacing: 1px;
-  font-style: italic;
   font-size: 0.75em;
 }
 
 .subpage {
+  font-family: "Source Sans Pro";
   text-transform: capitalize;
   margin-bottom: 1em;
 }
 
 .subpage-date {
-  font-style: italic;
   font-size: 0.8em;
   float: right;
 }
 
-#gravatar > figure {
+#gravatar {
   display: none;
 }
 
-#gravatar figure > img {
+#gravatar > img {
   border: 2px solid var(--color-black);
   border-radius: 100%;
-  width: 100px;
+  width: 150px;
 }
 
 .footer
@@ -208,17 +209,17 @@ pre, code {
 
 .nav a:focus
 {
-  color: var(--color-white);
+  color: var(--color-darkred);
 }
 
 .nav a:hover
 {
-  color: var(--color-white);
+  color: var(--color-darkred);
 }
 
 .nav a:active
 {
-  color: var(--color-white);
+  color: var(--color-darkred);
 }
 
 /* -----------------------
@@ -315,7 +316,9 @@ pre, code {
     border-bottom: 0;
   }
 
-  #gravatar > figure {
+  #gravatar { display: block }
+
+  #gravatar > img {
     display: block;
     float: left;
     margin-right: 1em;

@@ -2,7 +2,7 @@ require 'date'
 
 task default: %w[clean build]
 
-pages = %w(projects writing about)
+pages = %w(projects words about)
 page_path = File.expand_path("_pages")
 header = File.expand_path("_templates/header.html")
 footer = File.expand_path("_templates/footer.html")
