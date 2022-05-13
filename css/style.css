@@ -3,16 +3,15 @@
  */
 
 :root {
-  /* colors from base16-ocean*/
-  --color-red: rgb(186,97,107);
-  --color-darkred: rgb(150,97,107);
-  --color-blue: rgb(145,161,179);
-  --color-navy: rgb(44,48,59);
-  --color-yellow: rgb(232,204,140);
-  --color-green: rgb(165,191,140);
-  --color-gray: rgb(192,197,206);
-  --color-black: rgb(44,48,59);
-  --color-white: rgb(255,255,255);
+  /* colors from nord*/
+  --color-red: rgb(191,97,106);
+  --color-purple: rgb(180,142,173);
+  --color-blue: rgb(94,129,172);
+  --color-yellow: rgb(235,203,139);
+  --color-green: rgb(163,190,140);
+  --color-gray: rgb(216,222,233);
+  --color-black: rgb(46,52,64);
+  --color-white: rgb(236,239,244);
 }
 
 /* -----------------------
@@ -24,7 +23,7 @@ body
   margin: 0;
   padding: 0;
   color: var(--color-black);
-  background-color: var(--color-gray);
+  background-color: var(--color-white);
   font-family: "Source Serif Pro", sans-serif;
 }
 
@@ -53,7 +52,7 @@ blockquote
 {
   padding: 1em 2em;
   margin: 0 0 2em;
-  border-left: 5px solid var(--color-white);
+  border-left: 5px solid var(--color-gray);
 }
 
 hr
@@ -62,7 +61,7 @@ hr
   margin-top: 1em;
   margin-bottom: 2em;
   border: 0;
-  border-top: 2px solid var(--color-white);
+  border-top: 2px solid var(--color-gray);
 }
 
 table
@@ -70,7 +69,7 @@ table
   background-color: transparent;
   border-spacing: 0;
   border-collapse: collapse;
-  border-top: 1px solid var(--color-white);
+  border-top: 1px solid var(--color-gray);
 }
 
 th, td
@@ -78,15 +77,15 @@ th, td
   padding: .5em 1em;
   vertical-align: top;
   text-align: left;
-  border-bottom: 1px solid var(--color-white);
+  border-bottom: 1px solid var(--color-gray);
 }
 
 a { text-decoration: none; }
 a:link { color: var(--color-red);  }
 a:visited { color: var(--color-red);  }
-a:focus { color: var(--color-darkred);  }
-a:hover { color: var(--color-darkred);  }
-a:active { color: var(--color-darkred);  }
+a:focus { color: var(--color-purple);  }
+a:hover { color: var(--color-purple);  }
+a:active { color: var(--color-purple);  }
 
 pre, code {
   font-family: "Source Code Pro", monospace;
@@ -101,13 +100,13 @@ pre, code {
 {
   max-width: 50em;
   margin: 0 auto;
-  background-color: var(--color-gray);
+  /* background-color: var(--color-gray); */
 }
 
 .header
 {
   color: var(--color-black);
-  background: var(--color-gray);
+  /* background: var(--color-gray); */
   padding: 1em 1.25em;
   float: none;
 }
@@ -123,7 +122,7 @@ pre, code {
 
 .nav-bar
 {
-  background: var(--color-gray);
+  /* background: var(--color-gray); */
   padding: 0;
   white-space: nowrap;
 }
@@ -169,7 +168,7 @@ pre, code {
 .footer
 {
   color: var(--color-black);
-  background: var(--color-gray);
+  /* background: var(--color-gray); */
   padding: 1em 1.25em;
   text-align: center;
   font-family: "Source Sans Pro";
@@ -209,17 +208,17 @@ pre, code {
 
 .nav a:focus
 {
-  color: var(--color-darkred);
+  color: var(--color-purple);
 }
 
 .nav a:hover
 {
-  color: var(--color-darkred);
+  color: var(--color-purple);
 }
 
 .nav a:active
 {
-  color: var(--color-darkred);
+  color: var(--color-purple);
 }
 
 /* -----------------------
