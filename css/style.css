@@ -7,7 +7,8 @@
   --color-green: rgb(163,190,140);
   --color-gray: rgb(216,222,233);
   --color-black: rgb(46,52,64);
-  --color-white: rgb(236, 239, 244);
+  --color-white: rgb(255,255,255);
+  --color-offwhite: rgb(236, 239, 244);
 }
 
 body {
@@ -155,4 +156,13 @@ th, td {
 
 ul, ol {
   padding-inline-start: 30px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--color-offwhite);
+    background-color: var(--color-black);
+  }
+  a:link { color: var(--color-offwhite);  }
+  a:visited { color: var(--color-offwhite);  }
 }
