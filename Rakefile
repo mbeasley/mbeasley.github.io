@@ -2,7 +2,7 @@ require 'date'
 
 task default: %w[clean build]
 
-pages = %w(projects words about)
+pages = %w(words about)
 page_path = File.expand_path("_pages")
 header = File.expand_path("_templates/header.html")
 footer = File.expand_path("_templates/footer.html")
@@ -50,7 +50,7 @@ task :build do
         warn "pandoc of '#{sub}' failed" unless system(pandoc_cmd)
 
         # insert page title and date
-        system("echo \"<h1 class='page-title'>#{name_fmt}</h1>\n<div class='page-date'>#{date_fmt}</div>\n$(cat #{html})\" > #{html}")
+        system("echo \"<header>\n<h1>#{name_fmt}</h1>\n<time>#{date_fmt}</time>\n</header>\n$(cat #{html})\" > #{html}")
 
         cat_cmd = "cat #{header} #{html} #{footer} > #{page}/#{name}.html"
         warn "concat of page template for '#{name}' failed" unless system(cat_cmd)
@@ -66,15 +66,11 @@ task :build do
     pandoc_cmd = "pandoc -t html5 -o #{html} #{page_path}"
     warn "pandoc of '#{page_path}' failed" unless system(pandoc_cmd)
 
-    # insert page title and date
-    system("echo \"<div class='page-date'>Updated #{updated_date}</div>\n$(cat #{html})\" > #{html}") if subs.any?
-    system("echo \"<h1 class='page-title'>#{page}</h1>\n$(cat #{html})\" > #{html}") unless page == "about"
-
     # add each sub
     if subs.any?
-      system("echo \"<ul class='list-unstyled subpages'>\" >> #{html}")
+      system("echo \"<ul class='subpages'>\" >> #{html}")
       subs.sort_by(&:last).reverse.each do |sub|
-        system("echo \"  <li class='subpage'><a href='/#{page}/#{sub[0]}.html'>#{sub[0].gsub("_", " ")}</a> <span class='subpage-date'>#{sub[1].strftime("%B %e, %Y")}</span></li>\" >> #{html}")
+        system("echo \"  <li><a href='/#{page}/#{sub[0]}.html'>#{sub[0].gsub("_", " ")}</a><time>#{sub[1].strftime("%B %e, %Y")}</time></li>\" >> #{html}")
       end
       system("echo \"</ul>\" >> #{html}")
     end
