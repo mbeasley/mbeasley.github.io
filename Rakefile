@@ -1,87 +1,61 @@
+# TODO: We can improve upon the approach here.
+# 3. Use pandoc --extract-media=DIR to buildout image refs and files in
+#    the appropraite directories.
+# 4. Use pandoc --strip-comments to omit html comments in the markdown
+# 6. Figure out which --reference-location opt to use
+#
+#
 require 'date'
+require 'yaml'
 
-task default: %w[clean build]
-
-pages = %w(words about)
-page_path = File.expand_path("_pages")
-header = File.expand_path("_templates/header.html")
-footer = File.expand_path("_templates/footer.html")
+task default: %w[clean posts index]
 
 task :clean do
-  warn "==> Cleaning all files"
-  warn "    --> removing temp files in _build/"
-  `rm -rf _build/*`
-  pages.each do |page|
-    warn "    --> removing pages and subpages for '#{page}'"
-    `rm -rf #{page}/` if Dir.exists?(page)
-    `rm -rf #{page}.html` if File.exists?("#{page}.html")
-  end
-
-  warn "    --> removing index.html"
-  `rm -rf index.html` if File.exists?("index.html")
+  `rm -rf docs/*.html docs/posts/*.html`
 end
 
-task :build do
-  warn "==> Building all pages"
+# Iterate through each markdown page in the _pages directory, parse their
+# frontmatter yaml, and use to generate an index.md file which is immediately converted
+# to the corresponding HTML index.
+task :index do
+  begin
+    warn "==> Building index"
 
-  pages.each do |page|
-    page_path = File.expand_path("_pages/#{page}.md")
-    page_dir = File.expand_path("_pages/#{page}")
+    index_yaml = '_pages/index.yaml'
+    `rm -rf #{index_yaml}` if File.exists?(index_yaml)
 
-    subs = []
-
-    if Dir.exists?(page_dir)
-      warn "    --> Building subpages for '#{page}'"
-      FileUtils.mkdir_p(page)
-
-      Dir.glob("#{page_dir}/*").each do |sub|
-        sub_base = File.basename(sub, ".md")
-
-        # store files as "article_name_here__20160915.md"
-        name, date = sub_base.split("__")
-        warn "        + #{page}/#{name}"
-
-        date = Date.strptime(date, "%Y%m%d")
-        subs << [name, date]
-        date_fmt = date.strftime("%B %e, %Y")
-        name_fmt = name.gsub("_", " ")
-        html = File.expand_path("_build/#{name}.html.partial")
-        pandoc_cmd = "pandoc -t html5 -o #{html} #{sub}"
-        warn "pandoc of '#{sub}' failed" unless system(pandoc_cmd)
-
-        # insert page title and date
-        system("echo \"<header>\n<h1>#{name_fmt}</h1>\n<time>#{date_fmt}</time>\n</header>\n$(cat #{html})\" > #{html}")
-
-        cat_cmd = "cat #{header} #{html} #{footer} > #{page}/#{name}.html"
-        warn "concat of page template for '#{name}' failed" unless system(cat_cmd)
-
-        system("rm -rf #{html}")
-      end
+    `echo "data:" >> #{index_yaml}`
+    Dir.glob("_pages/*.md").each do |page|
+      basename = File.basename(page, ".md")
+      pandoc_cmd = "pandoc --quiet --template=_templates/index.yaml --metadata-file=config.yaml --wrap=none -V url=#{basename} #{page} >> #{index_yaml}"
+      fail "index generation failed" unless system(pandoc_cmd)
     end
+    pandoc_cmd = "pandoc --quiet --template=_templates/index.html --wrap=none --metadata-file=#{index_yaml} /dev/null > docs/posts.html"
+    fail "index generation failed" unless system(pandoc_cmd)
+  ensure
+    `rm -rf #{index_yaml}` if File.exists?(index_yaml)
+  end
+end
 
-    warn "    --> Building main page for '#{page}'"
-    updated_date = subs.max_by(&:last)[1].strftime("%B %e, %Y") if subs.any?
+task :posts do
+  warn "==> Building all posts"
+  page_dir = File.expand_path("_pages")
 
-    html = File.expand_path("_build/#{page}.html.partial")
-    pandoc_cmd = "pandoc -t html5 -o #{html} #{page_path}"
-    warn "pandoc of '#{page_path}' failed" unless system(pandoc_cmd)
+  Dir.glob("#{page_dir}/*.md").each do |post|
+    basename = File.basename(post, ".md")
+    warn "    --> #{basename}"
 
-    # add each sub
-    if subs.any?
-      system("echo \"<ul class='subpages'>\" >> #{html}")
-      subs.sort_by(&:last).reverse.each do |sub|
-        system("echo \"  <li><a href='/#{page}/#{sub[0]}.html'>#{sub[0].gsub("_", " ")}</a><time>#{sub[1].strftime("%B %e, %Y")}</time></li>\" >> #{html}")
-      end
-      system("echo \"</ul>\" >> #{html}")
-    end
+    path = if basename == "about"
+             "docs/index.html"
+           elsif basename == "social"
+             "docs/#{basename}.html"
+           else
+             "docs/posts/#{basename}.html"
+           end
 
-    out_page = (page == "about") ? "index" : page
-    cat_cmd = "cat #{header} #{html} #{footer} > #{out_page}.html"
-    warn "concat of page template for '#{page}' failed" unless system(cat_cmd)
-
-    system("rm -rf #{html}")
+    pandoc_cmd = "pandoc --quiet #{post} -o #{path} --template=_templates/post.html --metadata-file=config.yaml"
+    warn "pandoc of '#{post}' failed" unless system(pandoc_cmd)
   end
 end
 
 #TODO: minification, concat and gzip.
-#TODO: js syntax highlighting -> build process

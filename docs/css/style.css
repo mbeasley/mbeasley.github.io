@@ -113,13 +113,14 @@ hr {
 
 pre, code {
   font-family: monospace;
+  overflow: scroll;
 }
 
 pre {
   line-height: 1.25em;
   border: 1px dashed var(--color-gray);
+  border-radius: 0.5em;
   padding: 1em;
-  overflow: scroll;
 }
 
 figcaption {
@@ -158,6 +159,38 @@ ul, ol {
   padding-inline-start: 30px;
 }
 
+code span { color: #616e88; } /* Normal */
+code span.al { color: #bf616a; font-weight: bold; } /* Alert */
+code span.an { color: #d08770; } /* Annotation */
+code span.at { color: #8fbcbb; } /* Attribute */
+code span.bn { color: #b48ead; } /* BaseN */
+code span.bu { color: #88c0d0; font-style: italic; } /* BuiltIn */
+code span.cf { color: #81a1c1; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #ebcb8b; } /* Char */
+code span.cn { color: #eceff4; font-weight: bold; } /* Constant */
+code span.co { color: #9eadc8; font-style: italic; } /* Comment */
+code span.cv { color: #e5e9f0; } /* CommentVar */
+code span.do { color: #5e81ac; } /* Documentation */
+code span.dt { color: #81a1c1; } /* DataType */
+code span.dv { color: #b48ead; } /* DecVal */
+code span.er { color: #bf616a; text-decoration: underline; } /* Error */
+code span.ex { color: #8fbcbb; font-weight: bold; } /* Extension */
+code span.fl { color: #b48ead; } /* Float */
+code span.fu { color: #88c0d0; } /* Function */
+code span.im { color: #a3be8c; } /* Import */
+code span.in { color: #ebcb8b; } /* Information */
+code span.kw { color: #81a1c1; font-weight: bold; } /* Keyword */
+code span.op { color: #81a1c1; } /* Operator */
+code span.ot { color: #8fbcbb; } /* Other */
+code span.pp { color: #5e81ac; } /* Preprocessor */
+code span.re { color: #88c0d0; } /* RegionMarker */
+code span.sc { color: #ebcb8b; } /* SpecialChar */
+code span.ss { color: #d08770; } /* SpecialString */
+code span.st { color: #a3be8c; } /* String */
+code span.va { color: #5e81ac; } /* Variable */
+code span.vs { color: #8dae70; } /* VerbatimString */
+code span.wa { color: #bf616a; } /* Warning */
+
 @media (prefers-color-scheme: dark) {
   body {
     color: var(--color-offwhite);
@@ -165,4 +198,8 @@ ul, ol {
   }
   a:link { color: var(--color-offwhite);  }
   a:visited { color: var(--color-offwhite);  }
+  /* pre {                             */
+  /*   background: var(--color-black); */
+  /* }                                 */
+  code span { color: #d8dee9; } /* Normal */
 }

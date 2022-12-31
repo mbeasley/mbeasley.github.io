@@ -2,12 +2,17 @@
 <html lang="en">
   <head>
       <meta charset="utf-8">
-      <title>Mike Beasley</title>
-      <meta name="description" content="beasley.wtf">
+      <title>Posts - Mike Beasley</title>
+      <meta name="title" content="Posts">
+      <meta property="og:title" content="Posts" />
       <meta name="author" content="Mike Beasley">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="robots" content="index, follow">
+      <meta name="robots" content="noindex, nofollow">
+
+      <meta name="color-scheme" content="light dark">
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="rgb(255,255,255)">
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="rgb(46,52,64)">
 
       <link rel="apple-touch-icon" href="/img/favicon.png" type="image/png">
       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -26,3 +31,13 @@
       </h1>
     </nav>
     <main>
+      <ul class='subpages'>
+      $for(data)$
+        $if(data.index)$
+        <li><a href='/posts/$data.url$.html'>$data.title$</a><time>$data.date$</time></li>
+        $endif$
+      $endfor$
+      </ul>
+    </main>
+  </body>
+</html>
