@@ -25,7 +25,16 @@ task :index do
     `rm -rf #{index_yaml}` if File.exists?(index_yaml)
 
     `echo "data:" >> #{index_yaml}`
-    Dir.glob("_pages/*.md").each do |page|
+    pages = Dir.glob("_pages/*.md")
+    pages = pages.map do |page|
+      frontmatter = YAML.load_file(page)
+      date = frontmatter["index"] ? Date.parse(frontmatter["date"]) : nil
+      [page, date]
+    end.to_h
+
+    pages = pages.filter { |_k, v| !v.nil? }.sort_by { |_k, v| v }.reverse.to_h
+
+    pages.each do |page, _date|
       basename = File.basename(page, ".md")
       pandoc_cmd = "pandoc --quiet --template=_templates/index.yaml --metadata-file=config.yaml --wrap=none -V url=#{basename} #{page} >> #{index_yaml}"
       fail "index generation failed" unless system(pandoc_cmd)
