@@ -60,7 +60,6 @@ header > h1 {
 }
 
 header > time {
-  font-family: Arial, sans-serif;
   font-size: 0.75em;
   margin-bottom: 2em;
 }
@@ -80,9 +79,12 @@ header > time::before {
 }
 
 .subpages > li > time {
-  font-family: Arial, sans-serif;
   font-size: 0.75em;
   float: right;
+}
+
+time {
+  font-family: Arial, sans-serif;
 }
 
 p {
@@ -157,6 +159,15 @@ th, td {
 
 ul, ol {
   padding-inline-start: 30px;
+}
+
+.book-details {
+  font-size: 0.75em;
+}
+
+.book-details > p {
+  margin-top: 0em;
+  margin-bottom: 0em;
 }
 
 code span { color: #616e88; } /* Normal */
