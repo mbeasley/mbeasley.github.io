@@ -68,6 +68,10 @@ header > time::before {
   content: "Updated on ";
 }
 
+footer {
+  display: none;
+}
+
 .subpages {
   list-style: none;
   padding-inline-start: 0px;
