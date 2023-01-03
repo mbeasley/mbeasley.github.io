@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      $if(title)$
+        <title>$title$ - Mike Beasley</title>
+        <meta name="title" content="$title$">
+        <meta property="og:title" content="$title$" />
+      $else$
+        <title>Mike Beasley</title>
+        <meta name="title" content="Mike Beasley">
+        <meta property="og:title" content="Mike Beasley" />
+      $endif$
+
+      $if(description)$
+      <meta name="description" content="$description$">
+      <meta property="og:description" content="$description$" />
+      $endif$
+      <meta property="og:site_name" content="beasley.wtf" />
+
+      <meta name="author" content="Mike Beasley">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="robots" content="noindex, nofollow">
+
+
+      <meta name="color-scheme" content="light dark">
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="rgb(255,255,255)">
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="rgb(46,52,64)">
+
+      <link rel="apple-touch-icon" href="/img/favicon.png" type="image/png">
+      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="manifest" href="/site.webmanifest">
+
+      <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <nav>
+      <h1>
+        <a href="/">ʕ•ᴥ•ʔ mike beasley</a>
+      </h1>
+    </nav>
+    <main>
+      $if(title)$
+      <header>
+        <h1>$title$</h1>
+        $if(date)$
+        <time>$date$</time>
+        $endif$
+      </header>
+      $endif$
+      $body$
+    </main>
+  </body>
+</html>
