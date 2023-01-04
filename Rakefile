@@ -1,17 +1,10 @@
-# TODO: We can improve upon the approach here.
-# 3. Use pandoc --extract-media=DIR to buildout image refs and files in
-#    the appropraite directories.
-# 4. Use pandoc --strip-comments to omit html comments in the markdown
-# 6. Figure out which --reference-location opt to use
-#
-#
 require 'date'
 require 'yaml'
 
-task default: %w[clean posts index]
+task default: %w[clean posts index image]
 
 task :clean do
-  `rm -rf docs/*.html docs/posts/*.html`
+  `rm -rf docs/*.html docs/posts/*.html docs/img/*.webp`
 end
 
 # Iterate through each markdown page in the _pages directory, parse their
@@ -44,6 +37,11 @@ task :index do
   ensure
     `rm -rf #{index_yaml}` if File.exists?(index_yaml)
   end
+end
+
+task :image do
+  warn "==> Optimizing images"
+  `magick mogrify -resize 500 -strip -format webp -quality 82 docs/img/*.jpg docs/img/*.png docs/img/*.jpeg`
 end
 
 task :posts do

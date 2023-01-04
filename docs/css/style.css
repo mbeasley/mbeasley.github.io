@@ -129,6 +129,10 @@ pre {
   padding: 1em;
 }
 
+figure {
+  text-align: center;
+}
+
 figcaption {
   font-style: italic;
   text-align: center;

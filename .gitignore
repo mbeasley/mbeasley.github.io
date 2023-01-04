@@ -1,1 +1,5 @@
 _pages
+docs/img/*.jpg
+docs/img/*.jpeg
+docs/img/*.png
+.DS_Store
