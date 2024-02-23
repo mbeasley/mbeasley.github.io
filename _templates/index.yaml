@@ -1,6 +1,6 @@
 - path: $sourcefile$
-  title: $title$
+  title: '$title$'
   date: $date$
-  description: $description$
+  description: '$description$'
   index: $index$
   url: $url$
