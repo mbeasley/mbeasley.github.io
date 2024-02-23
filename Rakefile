@@ -52,9 +52,9 @@ task :posts do
     basename = File.basename(post, ".md")
     warn "    --> #{basename}"
 
-    path = if basename == "about"
+    path = if basename == "index"
              "docs/index.html"
-           elsif basename == "social"
+           elsif basename == "social" || basename == "about" || basename == "resume"
              "docs/#{basename}.html"
            else
              "docs/posts/#{basename}.html"
