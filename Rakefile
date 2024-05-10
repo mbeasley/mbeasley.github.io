@@ -1,7 +1,7 @@
 require 'date'
 require 'yaml'
 
-task default: %w[clean posts index image]
+task default: %w[clean posts image]
 
 task :clean do
   `rm -rf docs/*.html docs/posts/*.html docs/img/*.webp`
