@@ -2,12 +2,9 @@
 <html lang="en">
   <head>
       <meta charset="utf-8">
-              <title>Internet Security for Friends and
-Family - Mike Beasley</title>
-        <meta name="title" content="Internet Security for Friends and
-Family">
-        <meta property="og:title" content="Internet Security for Friends
-and Family" />
+              <title>Basic Internet Security - beasley.wtf</title>
+        <meta name="title" content="Basic Internet Security">
+        <meta property="og:title" content="Basic Internet Security" />
       
             <meta property="og:site_name" content="beasley.wtf" />
 
@@ -34,45 +31,30 @@ and Family" />
   <body>
     <nav>
       <h1>
-        <a href="/">ʕ•ᴥ•ʔ mike beasley</a>
+        <a href="/">ʕ•ᴥ•ʔ</a>
       </h1>
     </nav>
     <main>
             <header>
-        <h1>Internet Security for Friends and Family</h1>
-                <time>August 27, 2025</time>
+        <h1>Basic Internet Security</h1>
+                <time>February 2, 2026</time>
               </header>
             <p><em>Note: I wrote this for non-technical friends and
-            family. I am not a security expert by any means but I often
-            find myself advising folks on baseline practices that will
-            keep you singificantly safer online.</em></p>
+            family. I’m not a security expert, but I’m often asked for
+            baseline advice that can make people significantly safer
+            online.</em></p>
             <h2 id="the-short-version">the short version</h2>
             <ol type="1">
             <li>Don’t reuse passwords between accounts</li>
-            <li>Use a password manager (like <a
-            href="http://1password.com">1password</a>) to generate and
+            <li>Use a Password Manager (like <a
+            href="http://1password.com">1Password</a>) to generate and
             store long and unique passwords for <em>each
             account</em>.</li>
-            <li>Turn on two factor authentication (2FA) anywhere that
+            <li>Turn on two-factor authentication (2FA) anywhere that
             you can.</li>
             </ol>
             <p>That’s it. Keep reading for the longer version.</p>
             <hr/>
-            <p>Most “hacks” of your email or social media accounts are
-            due to individuals reusing the same password again and again
-            and again between sites.</p>
-            <p>Go visit <a
-            href="https://haveibeenpwned.com/">haveibeenpwned.com</a> to
-            see if your email has been included in a data breach. Note
-            that <em>if it has</em> (which is very likely), it has
-            nothing to do with your own security practices; those
-            breaches are due to companies having poor security practices
-            that allows hackers to access internal systems.</p>
-            <p>These data breaches often include personally identifiable
-            information (name, address, phone number, etc) but sometimes
-            also include passwords. So what happens if you reuse the
-            same password everywhere and it was included in a
-            breach?</p>
             <figure>
             <img
             src="https://imgs.xkcd.com/comics/how_hacking_works.png"
@@ -80,107 +62,92 @@ and Family" />
             <figcaption aria-hidden="true">xkcd: How Hacking
             Works</figcaption>
             </figure>
-            <p>Now that password can be attempted against other
-            accounts: email, paypal, facebook, etc. And without taking
-            extra steps, it’s now trivial for someone to get into these
-            important accounts and do damage.</p>
+            <p>Most account “hacks” happen for one reason: <strong>the
+            same password is reused across many sites</strong>.</p>
+            <p>When a company’s data is breached, attackers may get
+            email addresses and passwords. They then try those same
+            passwords on email, banking, shopping, and social media
+            accounts. This works far more often than people expect.</p>
+            <p>You can check whether your email has appeared in known
+            breaches at <a
+            href="https://haveibeenpwned.com/">haveibeenpwned.com</a>.
+            If it has, that does not mean you did anything wrong. It
+            means a company you trusted failed to protect its data.</p>
             <h2 id="what-to-do-about-it">what to do about it</h2>
-            <p>Use strong and unique passwords combined with two factor
-            authentication (2FA). That’s it. Doing so will make you
-            <em>significantly</em> more secure on the internet.</p>
-            <h3 id="what-makes-a-password-strong">What makes a password
-            strong?</h3>
+            <p>Use <strong>strong</strong> and <strong>unique</strong>
+            passwords combined with two-factor authentication (2FA).
+            That’s it. Doing so will make you <em>significantly</em>
+            safer on the internet.</p>
+            <p>A strong password is:</p>
             <ul>
-            <li><p>length (&gt; 16 characters, ideally longer)</p></li>
-            <li><p>complexity</p></li>
-            <li><p>impersonal (no dates, initials, names, nicknames,
-            etc)</p></li>
+            <li>long (&gt; 16 characters, ideally longer)</li>
+            <li>complex</li>
+            <li>impersonal (no dates, initials, names, nicknames,
+            etc)</li>
             </ul>
-            <p>But the greatest of these is length:</p>
+            <p>Length is more important than complexity:</p>
             <ul>
-            <li><code>uP4d*83</code> &lt;– cracked in <a
+            <li><code>uP4d*83</code> ← cracked in <a
             href="https://bitwarden.com/password-strength/">minutes</a></li>
-            <li><code>ball coffee charter kidnap outlet</code> &lt;–
-            cracked in centuries</li>
+            <li><code>ball coffee charter kidnap outlet</code> ← cracked
+            in centuries</li>
             </ul>
-            <h3 id="unique-passwords">Unique Passwords</h3>
-            <p>Do <u><strong><em>NOT</em></strong></u> reuse passwords
-            for accounts connected to:</p>
+            <h2 id="dont-reuse-passwords">Don’t Reuse Passwords</h2>
+            <p>Never reuse passwords for:</p>
             <ul>
-            <li><strong>email</strong>: email is the key to the castle
-            since someone can reset nearly all other passwords if they
-            have access to your email</li>
-            <li><strong>banking</strong>: bank, paypal, taxes,
-            investments, venmo, etc - this is your money, protect
-            it!</li>
-            <li><strong>retail</strong>: Amazon, online shopping, or
-            <em>anywhere</em> where you’ve submitted and stored credit
-            card info</li>
-            <li><strong>social media</strong>: Facebook, Instagram,
-            Twitter, LinkedIn, etc - these may seem less important, but
-            if they’re hacked they can be used for social engineering to
-            get access to more important accounts or for trying to scam
-            people that trust you</li>
+            <li><strong>email</strong>: If someone gets your email, they
+            can reset almost everything else.</li>
+            <li><strong>money</strong>: Banks, PayPal, Venmo, taxes,
+            investments.</li>
+            <li><strong>shopping</strong>: Amazon or anywhere your
+            credit card is stored.</li>
+            <li><strong>social media</strong>: These accounts are often
+            used to scam people who trust you or to gain access to more
+            important accounts.</li>
             </ul>
-            <h3 id="two-factor-authentication-2fa">Two Factor
+            <h3 id="two-factor-authentication-2fa">Two-Factor
             Authentication (2FA)</h3>
-            <p>In addition to a password, you can add a second factor to
-            better prove your identity when logging in. After you submit
-            your password, you’ll be asked to submit another piece of
-            information that only you would have. Examples, ordered from
-            best to worst:</p>
+            <p>2FA adds a second check after your password, usually
+            using something you have. Even if your password is stolen,
+            your account stays protected.</p>
+            <p>From best to worst:</p>
             <ul>
-            <li>hardware security key, like <a
-            href="https://www.yubico.com/products/">yubikey</a> (best,
-            but most technical)</li>
-            <li>phone key (not SMS)</li>
-            <li>authenticator code</li>
-            <li>phone SMS code</li>
-            <li>email code (worst)</li>
+            <li>hardware security key (e.g., YubiKey)</li>
+            <li>app-based phone key (push notification)</li>
+            <li>authenticator app code</li>
+            <li>SMS text message</li>
+            <li>email code</li>
             </ul>
-            <p>Configure two factor authentication on all important
-            accounts where available and be <u><em><strong>very
-            weary</strong></em></u> of accounts where two factor is not
-            available.</p>
-            <h3 id="passwords-managers">Passwords Managers</h3>
-            <p>A good password manager solves two of the three baseline
-            practices: strong and unique passwords.</p>
+            <p>Enable 2FA everywhere it’s available. Be cautious with
+            services that don’t offer it.</p>
+            <h2 id="password-managers">Password Managers</h2>
+            <p>A Password Manager makes strong, unique passwords
+            easy.</p>
+            <p>What it does:</p>
             <ul>
-            <li>it lives in your browser and on your phone</li>
-            <li>it can generate complex passwords that are unique per
-            website</li>
-            <li>it fills passwords in the browser for you</li>
-            <li>BUT it is the key to the castle so make sure this is
-            very secure</li>
+            <li>stores passwords securely</li>
+            <li>generates long, unique passwords for every site</li>
+            <li>autofills passwords on your phone and computer</li>
             </ul>
-            <p>I recommend <a
-            href="https://1password.com/">1Password</a>, but <strong>a
-            serious and entirely valid alternative</strong> (especially
-            for the tech averse): pen &amp; paper (just make sure
-            passwords are long and unique).</p>
-            <h3 id="additional-practices">Additional Practices</h3>
+            <p>Important note: your Password Manager is extremely
+            sensitive. Protect it with a very strong master password and
+            2FA.</p>
+            <p>Recommendation: <a
+            href="https://1password.com/">1Password</a></p>
+            <p>Non-technical alternative: pen and paper, as long as
+            passwords are long and never reused.</p>
+            <h2 id="additional-practices">Additional Practices</h2>
             <ul>
-            <li>update your devices and browser regularly so that
-            security updates are installed.</li>
-            <li>use a <em>strong</em> password / pin on your computer
-            and phone</li>
+            <li>keep your phone, computer, and browser up to date</li>
+            <li>use a strong passcode on your devices</li>
             </ul>
             <p>Read more tips at <a
-            href="https://1password.com/cybersecurity-101/">1password.com</a>.</p>
-            <h2 id="parting-words">Parting Words</h2>
-            <p>This can all feel intimidating, but it’s worth it. You
-            will have better peace of mind knowing that your internet
-            identity and assets are more secure. When you get that alert
-            at 11pm that someone is trying to reset your password on
-            Facebook, you can ignore and rest easy knowing that they
-            won’t be able to.</p>
-            <p>A bit of advice: don’t try and fix everything all at
-            once. Start with your email, then try your banks, etc and do
-            so incrementally. If you have any questions or feedback,
-            reach out at <code>hello@</code>.</p>
+            href="https://1password.com/cybersecurity-101/">1Password.com</a>.</p>
+            <h2 id="final-advice">Final Advice</h2>
+            <p>Don’t try to fix everything at once. Start first with
+            email, then banking, shopping, social media, and so on.</p>
+            <p>Work through them gradually. Questions or feedback:
+            <code>hello@</code></p>
     </main>
-    <footer>
-      <a rel="me" href="https://hachyderm.io/@beasley">Mastodon</a>
-    </footer>
   </body>
 </html>
