@@ -17,7 +17,7 @@ body {
   font-size: 13px;
   color: var(--color-black);
   background-color: var(--color-white);
-  max-width: 30rem;
+  max-width: 40rem;
   padding: 2rem;
   margin: auto;
 }
